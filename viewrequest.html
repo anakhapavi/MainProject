@@ -1,0 +1,26 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+{#<body>#}
+{% extends 'temp/user_home.html' %}
+{% block base %}
+	<h1 align="center">VIEW DEVICE REQUEST</h1>
+	<table align="center" border="2" class="table table-bordered">
+		<tr>
+			<td>device_id</td>
+			<td>device</td>
+		</tr>
+        {% for i in objval %}
+		<tr>
+			<td>{{ i.d_id }}</td>
+			<td>{{ i.dev_name }}</td>
+<td><a href="{% url 'req' idd=i.d_id %}" class="btn btn-danger">request</a> </td>
+
+		</tr>
+        {% endfor %}
+	</table>
+{% endblock %}
+</body>
+</html>
