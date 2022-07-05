@@ -1,0 +1,29 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+{#<body>#}
+{% extends 'temp/user_home.html' %}
+{% block base %}
+	<h1 align="center">VIEW VACCINATION DETAILS</h1>
+	<table align="center" border="2" class="table table-bordered">
+		<tr>
+			<td>Name</td>
+			<td>Availability</td>
+			<td>Date</td>
+			<td>Time</td>
+			<td>Venue</td>
+		</tr>
+        {% for i in ss %}
+		<tr>
+			<td>{{ i.vc_id }}</td>
+			<td>{{ i.availability }}</td>
+			<td>{{ i.date }}</td>
+			<td>{{ i.time }}</td>
+			<td>{{ i.venue }}</td>
+        <td><a href="{% url 'reqsttt' idd=i.vc_id %}">REQUEST</a> </td>
+		</tr>
+        {% endfor %}
+	</table>
+{% endblock %}
